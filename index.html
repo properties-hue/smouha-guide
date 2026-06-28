@@ -78,7 +78,7 @@
         "@id": "https://smouha-guide.vercel.app/#webpage"
       },
       "headline": "دليل سموحة وأليكس ويست لاختيار السكن والاستثمار في الإسكندرية",
-      "description": "مقارنة عملية بين سموحة وأليكس ويست وأهم المشروعات والشوارع وفرص الاستثمار، مع ربط طبيعي بمفهوم التسويق العقاري الرقمي.",
+      "description": "مقارنة عملية بين سموحة وأليكس ويست وأهم المشروعات والشوارع وفرص الاستثمار حسب هدف الشراء والميزانية.",
       "articleSection": [
         "Real Estate",
         "Alexandria",
@@ -356,6 +356,8 @@
         .quick-answer { background: linear-gradient(135deg, var(--navy), #0d3d7a); color: #fff; border-radius: 20px; padding: 24px; margin: 24px 0; border: 1px solid rgba(255,255,255,.14); }
         .quick-answer h3 { color: var(--gold); margin: 0 0 10px; }
         .quick-answer p { color: #edf2f7; margin: 0; text-align: right; }
+        .content-note { background: #fffaf0; border: 1px solid rgba(200,162,74,.35); border-radius: 18px; padding: 18px 20px; margin-top: 22px; }
+        .content-note p { margin: 0; color: #46556a; text-align: right; }
 
         .stats-grid, .compare-grid, .projects-grid, .answers-grid { display: grid; gap: 18px; }
         .stats-grid { grid-template-columns: repeat(4, 1fr); margin: 28px 0; }
@@ -373,15 +375,16 @@
         .advisor-head h2 { margin-bottom: 8px; }
         .section-badge { display: inline-flex; background: var(--gold-soft); color: var(--navy); border: 1px solid rgba(200,162,74,.35); border-radius: 999px; padding: 7px 14px; font-weight: 900; margin-bottom: 14px; }
         .badge { display: inline-flex; background: var(--gold-soft); color: var(--navy); border: 1px solid rgba(200,162,74,.35); border-radius: 999px; padding: 7px 14px; font-weight: 900; white-space: nowrap; }
-        .advisor-form { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin: 22px 0; }
+        .advisor-form { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 22px 0; }
         .field label { display: block; font-weight: 900; color: var(--navy); margin-bottom: 8px; }
         .field select { width: 100%; min-height: 52px; border-radius: 15px; border: 1px solid var(--line); background: #fff; padding: 0 14px; color: var(--text); font-weight: 800; outline: none; }
         .field select:focus { border-color: var(--gold); box-shadow: 0 0 0 4px var(--gold-soft); }
-        .advisor-result { display: grid; grid-template-columns: .9fr 1.1fr; gap: 20px; align-items: stretch; margin-top: 24px; }
+        .advisor-result { margin-top: 22px; }
         .score-card, .recommend-card { background: #fff; border: 1px solid var(--line); border-radius: 22px; padding: 24px; }
         .score-circle { width: 132px; height: 132px; border-radius: 50%; background: conic-gradient(var(--gold) 0deg, var(--gold) var(--score-deg, 260deg), #eee3ce var(--score-deg, 260deg)); display: grid; place-items: center; margin-bottom: 16px; }
         .score-circle span { width: 96px; height: 96px; background: #fff; border-radius: 50%; display: grid; place-items: center; color: var(--navy); font-size: 1.8rem; font-weight: 900; }
         .recommend-card h3 { margin: 0 0 12px; color: var(--navy); }
+        .recommend-card { max-width: 920px; }
         .recommend-card p { margin-bottom: 14px; text-align: right; }
         .chips { display: flex; gap: 8px; flex-wrap: wrap; margin: 15px 0; }
         .chip { background: var(--gold-soft); color: var(--navy); border-radius: 999px; padding: 6px 12px; font-weight: 900; font-size: .9rem; }
@@ -407,12 +410,6 @@
         summary { cursor: pointer; color: var(--navy); font-weight: 900; font-size: 1.08rem; }
         details p { margin: 12px 0 0; text-align: right; }
 
-        .marketing-box { background: linear-gradient(135deg, #0d1633, #172b62); color: #fff; border-radius: 26px; padding: clamp(24px, 4vw, 44px); display: grid; grid-template-columns: 1.1fr .9fr; gap: 24px; align-items: center; }
-        .marketing-box h2 { color: #fff; }
-        .marketing-box p { color: #e8edf5; text-align: right; }
-        .edu-points { display: grid; gap: 12px; }
-        .edu-point { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 14px; font-weight: 800; color: #fff7dd; }
-
         .cta-band { background: linear-gradient(135deg, var(--gold), #ead18d); color: var(--navy-2); border-radius: 28px; padding: 34px; display: flex; justify-content: space-between; align-items: center; gap: 22px; margin-top: 18px; }
         .cta-band h2 { margin: 0; color: var(--navy-2); }
         .cta-band p { margin: 6px 0 0; color: #3a2e12; text-align: right; }
@@ -430,7 +427,7 @@
         .copyright { margin-top: 14px; font-size: .86rem; color: #98a8bd; }
 
         @media (max-width: 1024px) {
-            .hero-grid, .advisor-result, .marketing-box, .cta-band { grid-template-columns: 1fr; }
+            .hero-grid, .cta-band { grid-template-columns: 1fr; }
             .hero-copy { max-width: 860px; }
             .hero-panel { max-width: 760px; }
             .stats-grid { grid-template-columns: repeat(2, 1fr); }
@@ -538,7 +535,8 @@
 <p>سموحة هي اختيار عملي لمن يحتاج قرب الخدمات اليومية داخل الإسكندرية، أما أليكس ويست فهو اختيار أقوى لمن يريد مجتمعًا أكثر هدوءًا ومساحات أكبر وإطلالات مفتوحة غرب المدينة. الفرق الحقيقي ليس في الاسم، بل في أسلوب الحياة والميزانية وهدف الشراء.</p>
 </div>
 <p>الميزة الكبرى في <a class="seo-link" href="https://smouha.org/" rel="noopener" target="_blank">عقارات سموحة</a> أن المنطقة ناضجة ومليئة بالخدمات، المدارس، النوادي، المستشفيات، المولات، والمكاتب، وهذا يجعل الطلب عليها مستمرًا في السكن والإيجار وإعادة البيع. وفي نفس الوقت، لا يمكن تجاهل امتداد الطلب نحو غرب الإسكندرية، خصوصًا مع مشروعات مثل <a class="seo-link" href="https://smouha.org/project/alexwest/" rel="noopener" target="_blank">أليكس ويست الإسكندرية</a> التي تخاطب عميلًا يريد الخصوصية والمساحات الأكبر داخل مجتمع مغلق.</p>
-<p>من زاوية السوق، سموحة تخدم قرار العميل الذي يريد أن يعيش قرب كل شيء، بينما أليكس ويست يخدم قرار العميل الذي يستطيع التحرك لمسافة أطول مقابل هدوء ومساحة وتجربة كمبوند. هذه المقارنة مهمة جدًا للمشتري، ومهمة أيضًا لأي شركة عقارية تستخدم المحتوى كجزء من نظام <a class="seo-link" href="https://estateedu.com/" rel="noopener" target="_blank">تسويق عقاري</a> يحترم نية البحث بدل ما يكرر نفس الجمل في كل صفحة.</p>
+<p>من زاوية السوق، سموحة تخدم قرار العميل الذي يريد أن يعيش قرب كل شيء، بينما أليكس ويست يخدم قرار العميل الذي يستطيع التحرك لمسافة أطول مقابل هدوء ومساحة وتجربة كمبوند. لذلك المقارنة هنا ليست إعلانًا لمشروع معين، لكنها طريقة أبسط لفهم القرار قبل التواصل.</p>
+<div class="content-note"><p>للشركات العقارية، بناء صفحات تشرح الفرق بين المناطق وتجاوب على أسئلة الباحث بوضوح أصبح جزءًا أساسيًا من <a class="seo-link" href="https://estateedu.com/" rel="noopener" target="_blank">تسويق عقاري</a> محترم، لأن العميل يثق في الصفحة التي تساعده قبل أن تبيع له.</p></div>
 <div aria-label="مؤشرات مقارنة سريعة" class="stats-grid">
 <div class="stat"><strong>داخل المدينة</strong><span>قوة سموحة الأساسية</span></div>
 <div class="stat"><strong>غرب الإسكندرية</strong><span>نطاق أليكس ويست</span></div>
@@ -550,37 +548,34 @@
 <section aria-labelledby="advisor-title" class="advisor" id="advisor">
 <div class="advisor-head">
 <div>
-<h2 id="advisor-title">اختار اللي يناسبك في دقيقة</h2>
-<p>اختار هدفك ونوع الوحدة والميزانية وطريقة الدفع، وستظهر لك نتيجة مختلفة حسب أولويتك، سواء سموحة، أليكس ويست، عيادة، مكتب، أو مسار مناسب لشركة عقارية تريد عملاء أفضل.</p>
+<h2 id="advisor-title">اختار اتجاهك الأقرب</h2>
+<p>جاوب على 3 اختيارات فقط، وسنقترح عليك هل تبدأ من سموحة، أليكس ويست، أو الاستثمار الإداري والطبي داخل سموحة.</p>
 </div>
-<span class="badge">اختيار سريع وواضح</span>
+<span class="badge">مساعد قرار سريع</span>
 </div>
-<form aria-label="أداة اختيار عقار مناسب" class="advisor-form" onsubmit="return false">
-<div class="field"><label for="goal">هدفك الأساسي</label><select id="goal">
-<option value="family">سكن عائلي</option><option value="rent">استثمار إيجاري</option><option value="resale">إعادة بيع بعد فترة</option><option value="privacy">خصوصية ومساحات أكبر</option><option value="commercial">إداري أو عيادة</option><option value="retail">تجاري أو محل</option><option value="marketing">تطوير تسويق شركة عقارية</option>
+<form aria-label="مساعد اختيار عقار مناسب" class="advisor-form" onsubmit="return false">
+<div class="field"><label for="goal">أنت بتدور على إيه؟</label><select id="goal">
+<option value="family">سكن عائلي</option>
+<option value="rent">استثمار وإيجار</option>
+<option value="resale">إعادة بيع بعد فترة</option>
+<option value="privacy">خصوصية ومساحات أكبر</option>
+<option value="commercial">عيادة أو مكتب</option>
 </select></div>
-<div class="field"><label for="unit">نوع الوحدة</label><select id="unit">
-<option value="smallApartment">شقة صغيرة</option><option value="familyApartment">شقة عائلية</option><option value="duplex">دوبلكس</option><option value="villa">فيلا أو توين هاوس</option><option value="office">مكتب إداري</option><option value="clinic">عيادة</option><option value="shop">محل تجاري</option><option value="undecided">لسه بقارن</option>
+<div class="field"><label for="place">المكان الأقرب لك</label><select id="place">
+<option value="smouha">سموحة داخل المدينة</option>
+<option value="alexwest">أليكس ويست غرب الإسكندرية</option>
+<option value="open">لسه بقارن بينهم</option>
 </select></div>
-<div class="field"><label for="budget">الميزانية التقريبية</label><select id="budget">
-<option value="4to6">من 4 إلى 6 مليون</option><option value="6to8">من 6 إلى 8 مليون</option><option value="8to12">من 8 إلى 12 مليون</option><option value="12to16">من 12 إلى 16 مليون</option><option value="16to25">من 16 إلى 25 مليون</option><option value="25to40">من 25 إلى 40 مليون</option><option value="above40">أكثر من 40 مليون</option>
-</select></div>
-<div class="field"><label for="payment">طريقة الشراء</label><select id="payment">
-<option value="installment">تقسيط</option><option value="cash">كاش</option><option value="ready">استلام قريب</option><option value="future">تحت الإنشاء</option>
-</select></div>
-<div class="field"><label for="lifestyle">الأهم بالنسبة لك</label><select id="lifestyle">
-<option value="services">قرب الخدمات اليومية</option><option value="club">قرب النادي والمدارس</option><option value="quiet">الهدوء والمساحات</option><option value="lake">إطلالة ومجتمع مفتوح</option><option value="roi">سهولة التأجير</option><option value="resale">قابلية إعادة البيع</option><option value="medical">حركة عيادات ومكاتب</option><option value="leads">عملاء جادين لمشروعك</option>
+<div class="field"><label for="budget">ميزانيتك التقريبية</label><select id="budget">
+<option value="starter">أقل من 8 مليون</option>
+<option value="middle">من 8 إلى 16 مليون</option>
+<option value="high">أكثر من 16 مليون</option>
 </select></div>
 </form>
 <div aria-live="polite" class="advisor-result">
-<div class="score-card">
-<div class="score-circle" id="scoreCircle"><span id="scoreText">82%</span></div>
-<h3 id="scoreTitle">درجة مناسبة الاختيار</h3>
-<p id="scoreNote">النسبة تقديرية لتسهيل القرار، وليست تقييمًا ماليًا نهائيًا.</p>
-</div>
 <div class="recommend-card">
-<h3 id="resultTitle">سموحة هي الاختيار الأقرب لك</h3>
-<p id="resultText">لأنك تبحث عن سكن عائلي قريب من الخدمات اليومية داخل المدينة، فالأقرب أن تبدأ المقارنة من شقق سموحة ومشروعاتها القريبة من النادي والمدارس والمناطق الطبية.</p>
+<h3 id="resultTitle">سموحة هي البداية الأقرب</h3>
+<p id="resultText">لو هدفك سكن عائلي داخل المدينة، ابدأ من شقق سموحة القريبة من الخدمات والنادي والمدارس، ثم قارن بين السعر، حالة العمارة، الجراج، وموعد الاستلام.</p>
 <div class="chips" id="chips"></div>
 <div class="result-actions" id="resultActions"></div>
 </div>
@@ -691,21 +686,6 @@
 </div>
 </article>
 </section>
-<section id="realestate-marketing">
-<div class="marketing-box">
-<div>
-<h2>المحتوى العقاري الجيد يبيع القرار قبل الوحدة</h2>
-<p>العميل لا يبحث عن إعلان طويل، لكنه يريد إجابة واضحة، أين أشتري، لماذا هذه المنطقة، ما الفرق بين المشروعين، وما الذي يناسب ميزانيتي. لذلك الصفحة العقارية القوية يجب أن تجمع بين المقارنة، الأسئلة، الروابط السياقية، وتجربة تساعده يختار.</p>
-<p>وهنا يظهر دور <a class="seo-link" href="https://estateedu.com/" rel="noopener" target="_blank">تسويق عقاري</a> مبني على نية البحث، لأن الشركة التي تشرح وتساعد وتقارن تكسب ثقة العميل قبل التواصل، بدل الاعتماد على صور وأسعار عامة فقط.</p>
-</div>
-<div aria-label="نقاط تعليمية في المحتوى العقاري" class="edu-points">
-<div class="edu-point">تحويل الصفحة من وصف عام إلى مسار قرار واضح</div>
-<div class="edu-point">تقسيم نية البحث إلى سكن، استثمار، فيلا، عيادة، أو إعادة بيع</div>
-<div class="edu-point">إضافة أسئلة وإجابات وسكيما تخدم الباحث ومحركات البحث</div>
-<div class="edu-point">ربط المحتوى بالواتساب والاختيارات بدل حشو الكلمات المفتاحية</div>
-</div>
-</div>
-</section>
 <section id="faq">
 <article class="article-card">
 <span class="section-badge">أسئلة من نوايا بحث جوجل</span>
@@ -783,146 +763,91 @@
 </footer>
 <script>
         const data = {
-            smouhaStarter: {
-                title: 'ابدأ من شقق سموحة العملية',
-                text: 'اختياراتك تشير إلى شقة داخل المدينة بميزانية أقرب للبداية. ابدأ بالمشروعات والوحدات القريبة من الخدمات، وراجع المساحة والتسليم والجراج قبل المقارنة بالسعر فقط.',
-                chips: ['شقق عملية', 'قرب الخدمات', 'مناسب للتقسيط'],
-                score: 82,
-                links: [
-                    ['شقق سموحة', 'https://smouha.org/apartments/'],
-                    ['تواصل واتساب', 'https://wa.me/201019300004']
-                ]
-            },
             smouhaFamily: {
-                title: 'سموحة مناسبة للسكن العائلي',
-                text: 'لأنك تهتم بالخدمات والنادي والمدارس، فسموحة هي الاتجاه الأقرب. ركز على الشوارع الهادئة نسبيًا، وقارن بين قرب الخدمات وحالة العمارة والمصعد والجراج.',
-                chips: ['سكن عائلي', 'مدارس ونادي', 'إيجار مستقر'],
-                score: 86,
+                title: 'سموحة هي البداية الأقرب لك',
+                text: 'لو هدفك سكن عائلي داخل المدينة، ابدأ من شقق سموحة القريبة من الخدمات والنادي والمدارس، ثم قارن بين السعر، حالة العمارة، الجراج، وموعد الاستلام.',
+                chips: ['سكن داخل المدينة', 'خدمات يومية', 'مدارس ونادي'],
                 links: [
                     ['شقق للبيع في سموحة', 'https://smouha.org/apartments/'],
                     ['تواصل واتساب', 'https://wa.me/201019300004']
                 ]
             },
-            smouhaPremium: {
-                title: 'ابحث في مشروعات سموحة الراقية',
-                text: 'ميزانيتك تسمح بمقارنة أقوى داخل سموحة، خصوصًا جراند فيو، فالوري، مروج، أو مشروعات قريبة من النادي والخدمات. هنا الجودة والموقع أهم من أقل سعر.',
-                chips: ['موقع مميز', 'كمبوندات سموحة', 'قيمة إعادة بيع'],
-                score: 88,
+            smouhaInvestment: {
+                title: 'سموحة أقوى للاستثمار والإيجار المستمر',
+                text: 'لو تفكر في الإيجار أو إعادة البيع، فسموحة غالبًا أوضح بسبب الطلب اليومي من العائلات، الأطباء، الشركات، والباحثين عن موقع قريب من الخدمات.',
+                chips: ['إيجار مستمر', 'طلب يومي', 'إعادة بيع أسهل'],
                 links: [
-                    ['سموحة جراند فيو', 'https://smouha.org/project/smouha-grand-view/'],
-                    ['كمبوند مروج', 'https://smouha.org/project/muruj/'],
+                    ['شقق سموحة', 'https://smouha.org/apartments/'],
                     ['تواصل واتساب', 'https://wa.me/201019300004']
                 ]
             },
             alexwestApartment: {
-                title: 'شقق أليكس ويست اختيار مناسب لك',
-                text: 'اختياراتك تميل إلى الهدوء والمجتمع المغلق مع ميزانية متوسطة أو مرتفعة. قارن شقق أليكس ويست من حيث المرحلة، المساحة، القرب من الخدمات الداخلية، ونظام السداد.',
-                chips: ['غرب الإسكندرية', 'مجتمع متكامل', 'هدوء ومساحات'],
-                score: 87,
+                title: 'أليكس ويست مناسب لو عايز هدوء وكمبوند',
+                text: 'لو تميل للهدوء والمساحات ونمط المجتمع المغلق، ابدأ بمقارنة شقق أليكس ويست حسب المرحلة، المساحة، الخدمات الداخلية، ونظام السداد.',
+                chips: ['غرب الإسكندرية', 'مجتمع مغلق', 'هدوء ومساحات'],
                 links: [
-                    ['شقق وفلل أليكس ويست', 'https://smouha.org/apartments/alex-west-for-sale/'],
-                    ['تفاصيل أليكس ويست', 'https://smouha.org/project/alexwest/'],
-                    ['تواصل واتساب', 'https://wa.me/201019300004']
-                ]
-            },
-            alexwestVilla: {
-                title: 'فيلات أليكس ويست هي الأقرب لاحتياجك',
-                text: 'بما أنك تميل للخصوصية أو الفيلا أو الميزانية الأعلى، فابدأ من أليكس ويست. لا تقارن الفيلا بسعر متر الشقة، بل قارن الأرض، الخصوصية، المرحلة، الصيانة، والتسليم.',
-                chips: ['فيلات', 'خصوصية', 'مساحات أكبر'],
-                score: 92,
-                links: [
-                    ['تفاصيل أليكس ويست', 'https://smouha.org/project/alexwest/'],
+                    ['أليكس ويست', 'https://smouha.org/project/alexwest/'],
                     ['شقق وفلل للبيع', 'https://smouha.org/apartments/alex-west-for-sale/'],
                     ['تواصل واتساب', 'https://wa.me/201019300004']
                 ]
             },
-            rental: {
-                title: 'ركز على الاستثمار الإيجاري داخل سموحة',
-                text: 'لو الهدف إيجار مستمر، فسموحة غالبًا أقوى بسبب المدارس والعيادات والمكاتب والحركة اليومية. اختار مساحة سهلة التأجير وتشطيب عملي وموقع قريب من الخدمات.',
-                chips: ['إيجار طويل المدى', 'طلب مستمر', 'موقع خدمي'],
-                score: 85,
+            alexwestVilla: {
+                title: 'أليكس ويست أقرب لو بتدور على فيلا أو خصوصية',
+                text: 'لو الأولوية للخصوصية والمساحة، فابدأ من أليكس ويست، خصوصًا لو الميزانية أعلى. هنا المقارنة لا تكون بسعر متر الشقة، بل بالمساحة، الأرض، الخصوصية، والصيانة.',
+                chips: ['فيلات', 'خصوصية', 'مساحة أكبر'],
                 links: [
-                    ['شقق سموحة', 'https://smouha.org/apartments/'],
+                    ['تفاصيل أليكس ويست', 'https://smouha.org/project/alexwest/'],
+                    ['شقق وفلل أليكس ويست', 'https://smouha.org/apartments/alex-west-for-sale/'],
                     ['تواصل واتساب', 'https://wa.me/201019300004']
                 ]
             },
-            resale: {
-                title: 'اختار وحدة سهلة إعادة البيع',
-                text: 'هدف إعادة البيع يحتاج وحدة مطلوبة من شريحة واسعة، ليست غريبة في المساحة أو السعر. قارن بين سموحة للموقع والخدمات، وأليكس ويست لو الوحدة داخل مرحلة قوية وبسعر دخول مناسب.',
-                chips: ['إعادة بيع', 'طلب واسع', 'سعر دخول مناسب'],
-                score: 83,
-                links: [
-                    ['شقق سموحة', 'https://smouha.org/apartments/'],
-                    ['أليكس ويست', 'https://smouha.org/project/alexwest/'],
-                    ['تواصل واتساب', 'https://wa.me/201019300004']
-                ]
-            },
-            medical: {
-                title: 'ابدأ من المواقع الطبية والإدارية في سموحة',
-                text: 'اختياراتك مناسبة لعيادة أو مكتب. هنا القرار يعتمد على الحركة، سهولة الوصول، الترخيص، الجراج، ووجود أنشطة مشابهة داخل المبنى أو البرج.',
+            commercial: {
+                title: 'ابدأ من سموحة للعيادات والمكاتب',
+                text: 'لو هدفك عيادة أو مكتب، فسموحة أقوى بسبب الحركة اليومية والمناطق الطبية والإدارية. ركز على الترخيص، الجراج، سهولة الوصول، ووجود أنشطة مشابهة في نفس المبنى.',
                 chips: ['عيادات', 'مكاتب', 'حركة يومية'],
-                score: 84,
                 links: [
                     ['إيست تاورز', 'https://smouha.org/project/smouha-east-towers/'],
                     ['تواصل واتساب', 'https://wa.me/201019300004']
                 ]
             },
-            retail: {
-                title: 'فكر في موقع تجاري عالي الحركة',
-                text: 'لو تبحث عن محل أو نشاط تجاري، لا تبدأ من الكمبوند الهادئ. ابدأ من الشوارع والمحاور ذات الحركة الواضحة، وقارن الواجهة، الرؤية، الركن، وسهولة الوصول.',
-                chips: ['محلات', 'واجهة', 'حركة عملاء'],
-                score: 80,
+            compare: {
+                title: 'قارن بينهم حسب أسلوب حياتك',
+                text: 'لو ما زلت محتارًا، اسأل نفسك: هل تريد القرب من كل شيء داخل المدينة؟ ابدأ من سموحة. هل تريد هدوءًا ومساحات وتجربة كمبوند؟ ابدأ من أليكس ويست.',
+                chips: ['مقارنة قبل الشراء', 'سموحة', 'أليكس ويست'],
                 links: [
+                    ['شقق سموحة', 'https://smouha.org/apartments/'],
+                    ['أليكس ويست', 'https://smouha.org/project/alexwest/'],
                     ['تواصل واتساب', 'https://wa.me/201019300004']
-                ]
-            },
-            marketing: {
-                title: 'الأولوية الآن لنظام تسويق عقاري أقوى',
-                text: 'لو أنت شركة أو مسوق عقاري، فاحتياجك ليس وحدة معينة، بل صفحة ومحتوى وتتبع يساعد العميل يختار ويتواصل. ابدأ بتطوير طريقة عرض المشروعات وربطها بالواتساب والقياس.',
-                chips: ['تسويق عقاري', 'محتوى عقاري', 'عملاء جادين'],
-                score: 91,
-                links: [
-                    ['تسويق عقاري', 'https://estateedu.com/']
                 ]
             }
         };
 
         const goal = document.getElementById('goal');
-        const unit = document.getElementById('unit');
+        const place = document.getElementById('place');
         const budget = document.getElementById('budget');
-        const payment = document.getElementById('payment');
-        const lifestyle = document.getElementById('lifestyle');
         const resultTitle = document.getElementById('resultTitle');
         const resultText = document.getElementById('resultText');
         const chips = document.getElementById('chips');
         const actions = document.getElementById('resultActions');
-        const scoreText = document.getElementById('scoreText');
-        const scoreCircle = document.getElementById('scoreCircle');
 
         function pickResult() {
-            if (goal.value === 'marketing' || lifestyle.value === 'leads') return 'marketing';
-            if (goal.value === 'retail' || unit.value === 'shop') return 'retail';
-            if (goal.value === 'commercial' || unit.value === 'office' || unit.value === 'clinic' || lifestyle.value === 'medical') return 'medical';
-            if (goal.value === 'privacy' || unit.value === 'villa' || budget.value === 'above40' || budget.value === '25to40') return 'alexwestVilla';
-            if (lifestyle.value === 'quiet' || lifestyle.value === 'lake' || unit.value === 'duplex') return 'alexwestApartment';
-            if (goal.value === 'rent' || lifestyle.value === 'roi') return 'rental';
-            if (goal.value === 'resale' || lifestyle.value === 'resale') return 'resale';
-            if ((budget.value === '16to25' || budget.value === '12to16') && payment.value !== 'installment') return 'smouhaPremium';
-            if (unit.value === 'familyApartment' || lifestyle.value === 'club' || lifestyle.value === 'services') return 'smouhaFamily';
-            return 'smouhaStarter';
+            if (goal.value === 'commercial') return 'commercial';
+            if (goal.value === 'privacy' || (place.value === 'alexwest' && budget.value === 'high')) return 'alexwestVilla';
+            if (place.value === 'alexwest') return 'alexwestApartment';
+            if (goal.value === 'rent' || goal.value === 'resale') return 'smouhaInvestment';
+            if (place.value === 'open') return 'compare';
+            return 'smouhaFamily';
         }
 
         function renderAdvisor() {
             const item = data[pickResult()];
             resultTitle.textContent = item.title;
             resultText.textContent = item.text;
-            scoreText.textContent = item.score + '%';
-            scoreCircle.style.setProperty('--score-deg', Math.round(item.score * 3.6) + 'deg');
             chips.innerHTML = item.chips.map(c => `<span class="chip">${c}</span>`).join('');
             actions.innerHTML = item.links.map(([label, url], index) => `<a class="btn ${index === 0 ? 'btn-primary' : 'btn-white'}" href="${url}" target="_blank" rel="noopener">${label}</a>`).join('');
         }
 
-        [goal, unit, budget, payment, lifestyle].forEach(el => el.addEventListener('change', renderAdvisor));
+        [goal, place, budget].forEach(el => el.addEventListener('change', renderAdvisor));
         renderAdvisor();
     </script>
 </body>
